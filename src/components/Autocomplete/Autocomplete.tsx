@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import styles from './Autocomplete.module.scss';
 import {AutocompleteItem, AutocompleteProps} from './types';
+import Tag from "./Tag";
 
 const Autocomplete = <T extends AutocompleteItem>({
                                                       items,
@@ -16,6 +17,7 @@ const Autocomplete = <T extends AutocompleteItem>({
     const [isFocused, setIsFocused] = useState(false);
 
     const containerRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (isFocused) {
@@ -66,6 +68,7 @@ const Autocomplete = <T extends AutocompleteItem>({
                 !newSelected.find((s) => s.id === i.id)
         );
         setFilteredItems(updatedFiltered);
+        inputRef.current?.focus();
 
     };
 
@@ -95,15 +98,13 @@ const Autocomplete = <T extends AutocompleteItem>({
         id: string | number
     ) => {
 
-        const input = containerRef.current?.querySelector('input');
-
         if (e.key === 'Backspace' || e.key === 'Delete') {
             e.preventDefault();
             removeItem(id);
-            input?.focus();
+            inputRef.current?.focus();
         } else if (e.key === 'ArrowRight') {
             e.preventDefault();
-            input?.focus();
+            inputRef.current?.focus();
         } else if (e.key === 'ArrowLeft') {
             e.preventDefault();
 
@@ -118,22 +119,18 @@ const Autocomplete = <T extends AutocompleteItem>({
              aria-haspopup="listbox"
              aria-expanded={filteredItems.length > 0}>
             {selectedItems.map((item) => (
-                <div key={item.id} className={styles.tag}
-                     tabIndex={0}
-                     onKeyDown={(e) => handleTagKeyDown(e, item.id)}
-                     aria-label={`${item.label}, press Delete or Backspace to remove`}>
-                    <span className={styles.tagText}>{item.label}</span>
-                    <span className={styles.remove}
-                          onClick={() => removeItem(item.id)}
-                          aria-label={`Remove ${item.label}`}
-                          role="button">
-            ×
-          </span>
-                </div>
+                <Tag
+                    key={item.id}
+                    label={item.label}
+                    id={item.id}
+                    onRemove={removeItem}
+                    onKeyDown={handleTagKeyDown}
+                />
             ))}
             <input
                 type="text"
                 className={styles.input}
+                ref={inputRef}
                 name="autocomplete-input"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
