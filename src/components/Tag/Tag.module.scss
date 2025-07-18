@@ -9,7 +9,7 @@
 }
 
 .tag:focus {
-  outline: 2px solid #1976d2;
+  outline: 2px solid #886afa;
 }
 
 .tagText {
@@ -32,4 +32,8 @@
   height: 18px;
   width: 18px;
 
+}
+
+.removeIcon:hover {
+  color: #886afa;
 }
