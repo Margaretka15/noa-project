@@ -1,20 +1,20 @@
 # Autocomplete component
 This is a simple React app showing a custom autocomplete component. 
 
-##Techstack
+## Techstack
 - React
 - TypeScript
 - SCSS Modules
 - heroicons (icons)
 
-##Setup 
+## Setup 
 Run:
 
 `npm install`
 
 `npm start`
 
-##Tests 
+## Tests 
 Run: 
 
 `npm test`
