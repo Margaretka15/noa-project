@@ -55,6 +55,8 @@ const Autocomplete = <T extends AutocompleteItem>({
                 onBlur={() => setIsFocused(false)}
                 aria-autocomplete="list"
                 aria-controls="autocomplete-list"
+                autoComplete="off"
+                spellCheck={false}
             />
             {filteredItems.length > 0 && (
                 <ul className={styles.dropdown} id="autocomplete-list" role="listbox">
