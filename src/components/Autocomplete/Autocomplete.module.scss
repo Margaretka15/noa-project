@@ -1,0 +1,66 @@
+.wrapper {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+ width: 400px;
+}
+
+.tag {
+  background: #e0e0e0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin: 2px;
+  align-items: center;
+  display: flex;
+}
+.tag:focus {
+  outline: 2px solid #1976d2;
+}
+
+.tagText {
+  max-width: 200px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.input {
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 100px;
+  padding: 4px;
+
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: white;
+  z-index: 10;
+  list-style-type: none;
+  padding: 5px;
+}
+
+.item {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.item:hover, .highlighted {
+  background-color: #f0f0f0;
+}
