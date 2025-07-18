@@ -41,16 +41,16 @@ export default function App() {
 
             </div>
 
-            <div className="container">
-                <Autocomplete
-                    items={userOptions}
-                    selectedItems={selected}
-                    onChange={setSelected}
-                    placeholder="Select tags..."
-                    allowCustom={true}
-                />
+            {/*<div className="container">*/}
+            {/*    <Autocomplete*/}
+            {/*        items={userOptions}*/}
+            {/*        selectedItems={selected}*/}
+            {/*        onChange={setSelected}*/}
+            {/*        placeholder="Select tags..."*/}
+            {/*        allowCustom={true}*/}
+            {/*    />*/}
 
-            </div>
+            {/*</div>*/}
         </>
 
     );
