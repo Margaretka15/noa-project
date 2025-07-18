@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { AutocompleteItem } from './types';
 
@@ -50,6 +51,7 @@ export const useAutocomplete = <T extends AutocompleteItem>(
     const removeItem = (id: string | number) => {
         const newSelected = selectedItems.filter((item) => item.id !== id);
         onChange(newSelected);
+        inputRef.current?.focus();
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
