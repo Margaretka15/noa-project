@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './Autocomplete.module.scss';
+import styles from './Tag.module.scss'
+import {XMarkIcon} from '@heroicons/react/24/outline'
 
 type Props = {
     label: string;
@@ -8,7 +9,7 @@ type Props = {
     onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>, id: string | number) => void;
 };
 
-const Tag: React.FC<Props> = ({ label, id, onRemove, onKeyDown }) => (
+const Tag: React.FC<Props> = ({label, id, onRemove, onKeyDown}) => (
     <div
         className={styles.tag}
         tabIndex={0}
@@ -22,7 +23,7 @@ const Tag: React.FC<Props> = ({ label, id, onRemove, onKeyDown }) => (
             aria-label={`Remove ${label}`}
             role="button"
         >
-      ×
+       <XMarkIcon className={styles.removeIcon}/>
     </span>
     </div>
 );

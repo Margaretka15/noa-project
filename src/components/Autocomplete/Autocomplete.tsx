@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Autocomplete.module.scss';
-import { AutocompleteItem, AutocompleteProps } from './types';
-import Tag from './Tag';
-import { useAutocomplete } from './useAutocomplete';
+import {AutocompleteItem, AutocompleteProps} from './types';
+import Tag from '../Tag/Tag';
+import {useAutocomplete} from './useAutocomplete';
 
 const Autocomplete = <T extends AutocompleteItem>({
                                                       items,
@@ -33,15 +33,18 @@ const Autocomplete = <T extends AutocompleteItem>({
             aria-haspopup="listbox"
             aria-expanded={filteredItems.length > 0}
         >
-            {selectedItems.map((item) => (
-                <Tag
-                    key={item.id}
-                    label={item.label}
-                    id={item.id}
-                    onRemove={removeItem}
-                    onKeyDown={handleTagKeyDown}
-                />
-            ))}
+            {selectedItems.length > 0 && (<div className={styles.tagWrapper}>
+                {selectedItems.map((item) => (
+                    <Tag
+                        key={item.id}
+                        label={item.label}
+                        id={item.id}
+                        onRemove={removeItem}
+                        onKeyDown={handleTagKeyDown}
+                    />
+                ))}
+            </div>)}
+
             <input
                 type="text"
                 className={styles.input}

@@ -1,45 +1,24 @@
 .wrapper {
   position: relative;
-  display: flex;
   width: 400px;
-  padding: 5px;
+
   border: 1px solid #ccc;
   border-radius: 4px;
-  flex-wrap: wrap;
+
 }
 
-.tag {
+.tagWrapper {
   display: flex;
-  padding: 2px 8px;
-  margin: 2px;
-  background: #e0e0e0;
-  border-radius: 12px;
-  align-items: center;
-}
-
-.tag:focus {
-  outline: 2px solid #1976d2;
-}
-
-.tagText {
-  display: inline-block;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.remove {
-  margin-left: 5px;
-  cursor: pointer;
+  padding: 10px;
+  flex-wrap: wrap;
 }
 
 .input {
   min-width: 100px;
-  padding: 4px;
   border: none;
   outline: none;
   flex: 1;
+  padding: 10px;
 
 }
 
@@ -49,17 +28,17 @@
   right: 0;
   left: 0;
   z-index: 10;
+  width: 400px;
+  //padding: 5px;
   max-height: 150px;
-  padding: 5px;
   overflow-y: auto;
   list-style-type: none;
   background: white;
   border: 1px solid #ccc;
-  width: 400px;
 }
 
 .item {
-  padding: 5px 10px;
+  padding: 5px 15px;
   cursor: pointer;
 }
 

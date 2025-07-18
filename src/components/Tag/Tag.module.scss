@@ -1,0 +1,35 @@
+
+.tag {
+  display: flex;
+  padding: 4px 8px;
+  margin: 2px;
+  background: #e9e1ff;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.tag:focus {
+  outline: 2px solid #1976d2;
+}
+
+.tagText {
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove {
+  margin-left: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+}
+
+.removeIcon {
+  height: 18px;
+  width: 18px;
+
+}
