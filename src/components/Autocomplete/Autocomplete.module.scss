@@ -1,28 +1,29 @@
 .wrapper {
-  border: 1px solid #ccc;
-  padding: 5px;
-  border-radius: 4px;
-  display: flex;
-  flex-wrap: wrap;
   position: relative;
- width: 400px;
+  display: flex;
+  width: 400px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-wrap: wrap;
 }
 
 .tag {
-  background: #e0e0e0;
-  padding: 2px 8px;
-  border-radius: 12px;
-  margin: 2px;
-  align-items: center;
   display: flex;
+  padding: 2px 8px;
+  margin: 2px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  align-items: center;
 }
+
 .tag:focus {
   outline: 2px solid #1976d2;
 }
 
 .tagText {
-  max-width: 200px;
   display: inline-block;
+  max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -34,26 +35,27 @@
 }
 
 .input {
+  min-width: 100px;
+  padding: 4px;
   border: none;
   outline: none;
   flex: 1;
-  min-width: 100px;
-  padding: 4px;
 
 }
 
 .dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
   right: 0;
-  max-height: 150px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  background: white;
+  left: 0;
   z-index: 10;
-  list-style-type: none;
+  max-height: 150px;
   padding: 5px;
+  overflow-y: auto;
+  list-style-type: none;
+  background: white;
+  border: 1px solid #ccc;
+  width: 400px;
 }
 
 .item {
